@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Entre em contato com a João Beauty — consultoria especializada em produtos Caudalie. Atendimento rápido pelo WhatsApp.">
+  <meta name="robots" content="index, follow">
+  <title>Contato — João Beauty | Fale Conosco</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%235B7358'/><text y='.9em' font-size='70' x='15' fill='white'>J</text></svg>">
+  <style>
+    .contato-hero {
+      background: var(--verde-dark);
+      padding: 150px 0 70px;
+      text-align: center;
+      color: var(--branco);
+    }
+    .contato-hero h1 { color: var(--branco); margin-bottom: 12px; }
+    .contato-hero p { opacity: .8; font-weight: 300; max-width: 480px; margin: 0 auto; }
+    .contato-hero .section-tag { color: rgba(255,255,255,.65); }
+
+    .contato-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .contato-info-card {
+      background: var(--verde-dark);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      color: var(--branco);
+      position: sticky;
+      top: 100px;
+    }
+    .contato-info-card h3 { color: var(--branco); margin-bottom: 8px; font-size: 1.4rem; }
+    .contato-info-card > p { opacity: .8; font-weight: 300; margin-bottom: 32px; font-size: .9rem; line-height: 1.7; }
+    .contato-channel {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+    .contato-channel:last-of-type { border-bottom: none; }
+    .contato-channel-icon {
+      width: 44px; height: 44px;
+      background: rgba(181,139,104,.25);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cobre);
+      flex-shrink: 0;
+    }
+    .contato-channel-title { font-weight: 600; font-size: .9rem; margin-bottom: 2px; }
+    .contato-channel-val { font-size: .82rem; opacity: .75; }
+    .contato-channel a { color: rgba(255,255,255,.9); transition: var(--transition); }
+    .contato-channel a:hover { color: var(--cobre); }
+
+    .contato-wa-cta {
+      margin-top: 28px;
+      display: block;
+      text-align: center;
+    }
+
+    .faq-card {
+      background: var(--branco);
+      border: 1px solid rgba(91,115,88,.1);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .faq-card:hover { border-color: rgba(91,115,88,.3); }
+    .faq-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 500;
+      font-size: .92rem;
+    }
+    .faq-question svg { transition: var(--transition); flex-shrink: 0; color: var(--verde); }
+    .faq-card.open .faq-question svg { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .35s ease;
+      font-size: .85rem;
+      color: #666;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+    .faq-card.open .faq-answer { max-height: 200px; padding-top: 14px; }
+
+    .quick-form {
+      background: var(--branco);
+      border: 1px solid rgba(91,115,88,.1);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      margin-bottom: 32px;
+    }
+    .form-row { margin-bottom: 18px; }
+    .form-row label {
+      display: block;
+      font-size: .8rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--grafite);
+    }
+    .form-row input, .form-row select, .form-row textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid rgba(91,115,88,.18);
+      border-radius: var(--radius-md);
+      font-size: .88rem;
+      transition: var(--transition);
+      background: var(--off-white);
+      color: var(--grafite);
+    }
+    .form-row input:focus, .form-row select:focus, .form-row textarea:focus {
+      outline: none;
+      border-color: var(--verde);
+    }
+    .form-row textarea { resize: vertical; min-height: 100px; }
+
+    @media (max-width: 900px) {
+      .contato-grid { grid-template-columns: 1fr; }
+      .contato-info-card { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-bar-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Produtos Originais Caudalie</div>
+    <div class="trust-bar-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> Atendimento Especializado</div>
+    <div class="trust-bar-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="3" width="15" height="13" rx="1"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg> Entrega Rápida</div>
+    <div class="trust-bar-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> Compra Segura pelo WhatsApp</div>
+    <p class="trust-bar-disclaimer">João Beauty é uma loja independente especializada em produtos originais Caudalie</p>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header id="header" class="scrolled">
+  <div class="container header-inner">
+    <a href="index.html" class="logo"><div class="logo-text">JOÃO <span>BEAUTY</span></div></a>
+    <nav role="navigation" aria-label="Menu principal">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="produtos.html">Produtos</a></li>
+        <li class="nav-dropdown">
+          <a href="produtos.html">Categorias</a>
+          <ul class="dropdown-menu">
+            <li><a href="produtos.html?cat=skincare">Skincare</a></li>
+            <li><a href="produtos.html?cat=seruns">Séruns</a></li>
+            <li><a href="produtos.html?cat=hidratacao">Hidratação</a></li>
+            <li><a href="produtos.html?cat=limpeza">Limpeza Facial</a></li>
+            <li><a href="produtos.html?cat=corpo">Corpo</a></li>
+            <li><a href="produtos.html?cat=fragrancias">Fragrâncias</a></li>
+          </ul>
+        </li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html" class="active">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" onclick="openSearch()" aria-label="Buscar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
+      <button class="icon-btn" id="darkToggle" aria-label="Modo escuro"></button>
+      <button class="icon-btn" onclick="openCartSidebar()" aria-label="Carrinho"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg><span class="cart-count">0</span></button>
+      <a href="https://wa.me/5562993403763" target="_blank" rel="noopener" class="btn-wa-header"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg><span>WhatsApp</span></a>
+      <button class="burger" id="burgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<nav class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-header">
+    <div class="logo-text" style="color:var(--verde-dark)">JOÃO <span style="color:var(--cobre)">BEAUTY</span></div>
+    <button class="mobile-nav-close" id="mobileNavClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+  </div>
+  <ul class="mobile-nav-list">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="produtos.html">Produtos</a></li>
+    <li><a href="sobre.html">Sobre</a></li>
+    <li><a href="contato.html">Contato</a></li>
+  </ul>
+  <div class="mobile-nav-footer">
+    <a href="https://wa.me/5562993403763" target="_blank" rel="noopener" class="btn btn-whatsapp" style="justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>Falar no WhatsApp</a>
+  </div>
+</nav>
+
+<main id="main-content">
+
+  <!-- HERO -->
+  <section class="contato-hero" aria-labelledby="contato-title">
+    <div class="container">
+      <span class="section-tag">Fale Conosco</span>
+      <h1 id="contato-title">Estamos aqui para ajudar</h1>
+      <p>Tire suas dúvidas, peça uma recomendação ou finalize sua compra — tudo de forma rápida pelo WhatsApp</p>
+    </div>
+  </section>
+
+  <!-- CONTATO GRID -->
+  <section class="section" aria-label="Informações de contato">
+    <div class="container">
+      <div class="contato-grid">
+
+        <!-- INFO CARD (sticky) -->
+        <div class="contato-info-card" data-reveal>
+          <h3>Canais de Atendimento</h3>
+          <p>Escolha a forma mais conveniente para você. Nosso canal principal e mais rápido é o WhatsApp.</p>
+
+          <div class="contato-channel">
+            <div class="contato-channel-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            </div>
+            <div>
+              <p class="contato-channel-title">WhatsApp</p>
+              <p class="contato-channel-val"><a href="https://wa.me/5562993403763" target="_blank" rel="noopener">+55 62 99340-3763</a></p>
+            </div>
+          </div>
+
+          <div class="contato-channel">
+            <div class="contato-channel-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+            </div>
+            <div>
+              <p class="contato-channel-title">Horário de Atendimento</p>
+              <p class="contato-channel-val">Segunda a Sábado, 9h às 18h</p>
+            </div>
+          </div>
+
+          <div class="contato-channel">
+            <div class="contato-channel-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            </div>
+            <div>
+              <p class="contato-channel-title">Área de Entrega</p>
+              <p class="contato-channel-val">Todo o território nacional</p>
+            </div>
+          </div>
+
+          <a href="https://wa.me/5562993403763?text=Olá%20João!%20Vim%20pelo%20site%20e%20gostaria%20de%20falar%20com%20você." target="_blank" rel="noopener" class="btn btn-whatsapp contato-wa-cta" style="justify-content:center">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            Iniciar conversa
+          </a>
+        </div>
+
+        <!-- FORM + FAQ -->
+        <div data-reveal>
+          <div class="quick-form">
+            <h3 style="margin-bottom:6px">Prefere que a gente te chame?</h3>
+            <p style="font-size:.85rem;color:#777;font-weight:300;margin-bottom:24px">Preencha os dados abaixo e clique em enviar — vamos te chamar diretamente no WhatsApp com sua mensagem já pronta.</p>
+
+            <form id="contactForm" onsubmit="return sendContactForm(event)">
+              <div class="form-row">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+              </div>
+              <div class="form-row">
+                <label for="assunto">Assunto</label>
+                <select id="assunto" name="assunto">
+                  <option value="Dúvida sobre produto">Dúvida sobre produto</option>
+                  <option value="Recomendação personalizada">Recomendação personalizada</option>
+                  <option value="Status do pedido">Status do pedido</option>
+                  <option value="Outro assunto">Outro assunto</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" placeholder="Como podemos te ajudar?" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-whatsapp" style="width:100%;justify-content:center">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                Enviar via WhatsApp
+              </button>
+            </form>
+          </div>
+
+          <h3 style="margin-bottom:20px;font-size:1.3rem">Perguntas Frequentes</h3>
+
+          <div class="faq-card" onclick="this.classList.toggle('open')">
+            <div class="faq-question">
+              Os produtos são realmente originais?
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </div>
+            <div class="faq-answer">Sim! Trabalhamos exclusivamente com produtos Caudalie 100% originais, adquiridos de fontes verificadas. Garantimos a autenticidade de todos os itens vendidos.</div>
+          </div>
+
+          <div class="faq-card" onclick="this.classList.toggle('open')">
+            <div class="faq-question">
+              Como funciona a compra pelo WhatsApp?
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </div>
+            <div class="faq-answer">Você escolhe os produtos no site, adiciona ao carrinho e finaliza pelo WhatsApp. Lá, confirmamos disponibilidade, forma de pagamento e endereço de entrega com você.</div>
+          </div>
+
+          <div class="faq-card" onclick="this.classList.toggle('open')">
+            <div class="faq-question">
+              Vocês entregam em todo o Brasil?
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </div>
+            <div class="faq-answer">Sim, entregamos para todo o território nacional. O prazo e valor do frete são calculados e informados durante o atendimento no WhatsApp.</div>
+          </div>
+
+          <div class="faq-card" onclick="this.classList.toggle('open')">
+            <div class="faq-question">
+              Posso pedir uma recomendação antes de comprar?
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </div>
+            <div class="faq-answer">Com certeza! Nossa consultoria é gratuita. Conte sobre seu tipo de pele e objetivos que indicamos os melhores produtos Caudalie para você.</div>
+          </div>
+
+          <div class="faq-card" onclick="this.classList.toggle('open')">
+            <div class="faq-question">
+              A João Beauty é o site oficial da Caudalie?
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </div>
+            <div class="faq-answer">Não. A João Beauty é uma loja independente especializada na revenda de produtos originais Caudalie, com consultoria personalizada. Não somos afiliados oficialmente à marca.</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-text" style="margin-bottom:12px">JOÃO <span style="color:var(--cobre)">BEAUTY</span></div>
+        <p>Consultoria especializada e revenda de produtos originais Caudalie.</p>
+        <a href="https://wa.me/5562993403763" target="_blank" rel="noopener" class="footer-wa-btn" style="margin-top:16px">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          +55 62 99340-3763
+        </a>
+      </div>
+      <div class="footer-col"><h5>Navegação</h5><ul><li><a href="index.html">Home</a></li><li><a href="produtos.html">Produtos</a></li><li><a href="sobre.html">Sobre</a></li><li><a href="contato.html">Contato</a></li></ul></div>
+      <div class="footer-col"><h5>Produtos</h5><ul><li><a href="produtos.html?cat=seruns">Séruns</a></li><li><a href="produtos.html?cat=hidratacao">Hidratação</a></li><li><a href="produtos.html?cat=fragrancias">Fragrâncias</a></li><li><a href="produtos.html?cat=corpo">Corpo</a></li></ul></div>
+      <div class="footer-col"><h5>Contato</h5><ul><li><a href="https://wa.me/5562993403763" target="_blank">WhatsApp</a></li><li><a href="contato.html">Fale Conosco</a></li></ul><p style="font-size:.78rem;color:rgba(255,255,255,.45);margin-top:16px;line-height:1.6">Seg–Sáb: 9h às 18h<br>+55 62 99340-3763</p></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 João Beauty. Todos os direitos reservados.</p></div>
+  </div>
+  <div class="footer-disclaimer"><div class="container">João Beauty é uma loja independente especializada em produtos originais Caudalie. Não somos o site oficial da marca. Caudalie® é marca registrada de Caudalie S.A.S.</div></div>
+</footer>
+
+<!-- OVERLAYS -->
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true">
+  <div class="search-box">
+    <div class="search-input-wrap">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:#ccc;flex-shrink:0"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input type="search" id="searchInput" class="search-input" placeholder="Buscar produtos Caudalie..." autocomplete="off">
+      <button onclick="closeSearch()" style="color:#ccc;padding:4px" aria-label="Fechar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="productModal" role="dialog" aria-modal="true"></div>
+<div class="cart-sidebar-overlay" id="cartOverlay"></div>
+<aside class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header"><h3>Meu Carrinho</h3><button class="icon-btn" id="closeCartBtn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button></div>
+  <div class="cart-items" id="cartBody"><div class="cart-empty"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#ddd"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg><p>Seu carrinho está vazio</p><button class="btn btn-outline" onclick="closeCartSidebar()">Explorar produtos</button></div></div>
+  <div id="cartFooter"></div>
+</aside>
+
+<a href="https://wa.me/5562993403763" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+  <span class="wa-tooltip">Falar no WhatsApp</span>
+</a>
+<div class="toast-container" aria-live="polite"></div>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/search.js"></script>
+<script src="js/app.js"></script>
+<script>
+  function sendContactForm(e) {
+    e.preventDefault();
+    const nome = document.getElementById('nome').value.trim();
+    const assunto = document.getElementById('assunto').value;
+    const mensagem = document.getElementById('mensagem').value.trim();
+
+    if (!nome || !mensagem) return false;
+
+    const texto = `Olá João! 👋\n\nMeu nome é ${nome}.\n\n*Assunto:* ${assunto}\n\n${mensagem}`;
+    const url = `https://wa.me/5562993403763?text=${encodeURIComponent(texto)}`;
+    window.open(url, '_blank');
+    return false;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conheça a João Beauty — consultoria especializada e revenda de produtos originais Caudalie. Atendimento personalizado, produtos autênticos e entrega rápida.">
+  <meta name="robots" content="index, follow">
+  <title>Sobre — João Beauty | Revenda Especializada Caudalie</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%235B7358'/><text y='.9em' font-size='70' x='15' fill='white'>J</text></svg>">
+  <style>
+    .sobre-hero {
+      background: linear-gradient(135deg, var(--verde-dark) 0%, var(--verde) 100%);
+      padding: 160px 0 80px;
+      color: var(--branco);
+      position: relative;
+      overflow: hidden;
+    }
+    .sobre-hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: rgba(181,139,104,.15);
+    }
+    .sobre-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: 10%;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.05);
+    }
+    .sobre-hero h1 { color: var(--branco); margin-bottom: 16px; }
+    .sobre-hero p { opacity: .85; font-weight: 300; max-width: 560px; font-size: 1.05rem; line-height: 1.8; }
+    .sobre-hero .section-tag { color: rgba(255,255,255,.7); }
+
+    .missao-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .missao-card {
+      background: var(--branco);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      border: 1px solid rgba(91,115,88,.1);
+      transition: var(--transition);
+    }
+    .missao-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+    .missao-icon {
+      width: 52px; height: 52px;
+      background: rgba(91,115,88,.1);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--verde);
+      margin-bottom: 20px;
+    }
+    .missao-title { font-weight: 600; font-size: 1rem; margin-bottom: 8px; }
+    .missao-desc { font-size: .85rem; color: #666; font-weight: 300; line-height: 1.7; }
+
+    .numeros-section {
+      background: var(--verde-dark);
+      padding: 64px 0;
+      color: var(--branco);
+    }
+    .numeros-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      text-align: center;
+    }
+    .numero-item {}
+    .numero-val {
+      font-family: var(--display);
+      font-size: 3rem;
+      font-weight: 300;
+      color: var(--branco);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .numero-val span { color: var(--cobre); }
+    .numero-label { font-size: .8rem; letter-spacing: .08em; opacity: .7; text-transform: uppercase; }
+
+    .valores-section { padding: 80px 0; background: var(--bege); }
+    .valores-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .valor-card {
+      background: var(--branco);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      border: 1px solid rgba(91,115,88,.08);
+      transition: var(--transition);
+    }
+    .valor-card:hover { box-shadow: var(--shadow-sm); }
+    .valor-icon {
+      width: 48px; height: 48px;
+      background: rgba(181,139,104,.12);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cobre);
+      flex-shrink: 0;
+    }
+    .valor-title { font-weight: 600; margin-bottom: 6px; }
+    .valor-desc { font-size: .84rem; color: #666; font-weight: 300; line-height: 1.7; }
+
+    .caudalie-section {
+      padding: 80px 0;
+      background: var(--branco);
+    }
+    .caudalie-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .caudalie-visual {
+      background: linear-gradient(135deg, var(--bege) 0%, rgba(181,139,104,.1) 100%);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      text-align: center;
+      border: 1px solid rgba(181,139,104,.15);
+    }
+    .caudalie-logo-placeholder {
+      font-family: var(--display);
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: var(--verde-dark);
+      letter-spacing: .08em;
+      margin-bottom: 16px;
+    }
+    .caudalie-visual p {
+      font-size: .85rem;
+      color: #777;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+    .disclaimer-box {
+      background: rgba(91,115,88,.07);
+      border: 1.5px solid rgba(91,115,88,.2);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      margin-top: 24px;
+      font-size: .82rem;
+      color: var(--verde-dark);
+      line-height: 1.7;
+    }
+    .disclaimer-box strong { display: block; margin-bottom: 6px; }
+
+    @media (max-width: 768px) {
+      .missao-grid { grid-template-columns: 1fr; }
+      .numeros-grid { grid-template-columns: repeat(2, 1fr); }
+      .valores-grid { grid-template-columns: 1fr; }
+      .caudalie-inner { grid-template-columns: 1fr; gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-bar-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Produtos Originais Caudalie</div>
+    <div class="trust-bar-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> Atendimento Especializado</div>
+    <div class="trust-bar-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="3" width="15" height="13" rx="1"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg> Entrega Rápida</div>
+    <div class="trust-bar-item"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> Compra Segura pelo WhatsApp</div>
+    <p class="trust-bar-disclaimer">João Beauty é uma loja independente especializada em produtos originais Caudalie</p>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header id="header" class="scrolled">
+  <div class="container header-inner">
+    <a href="index.html" class="logo"><div class="logo-text">JOÃO <span>BEAUTY</span></div></a>
+    <nav role="navigation" aria-label="Menu principal">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="produtos.html">Produtos</a></li>
+        <li class="nav-dropdown">
+          <a href="produtos.html">Categorias</a>
+          <ul class="dropdown-menu">
+            <li><a href="produtos.html?cat=skincare">Skincare</a></li>
+            <li><a href="produtos.html?cat=seruns">Séruns</a></li>
+            <li><a href="produtos.html?cat=hidratacao">Hidratação</a></li>
+            <li><a href="produtos.html?cat=limpeza">Limpeza Facial</a></li>
+            <li><a href="produtos.html?cat=corpo">Corpo</a></li>
+            <li><a href="produtos.html?cat=fragrancias">Fragrâncias</a></li>
+          </ul>
+        </li>
+        <li><a href="sobre.html" class="active">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" onclick="openSearch()" aria-label="Buscar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
+      <button class="icon-btn" id="darkToggle" aria-label="Modo escuro"></button>
+      <button class="icon-btn" onclick="openCartSidebar()" aria-label="Carrinho"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg><span class="cart-count">0</span></button>
+      <a href="https://wa.me/5562993403763" target="_blank" rel="noopener" class="btn-wa-header"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg><span>WhatsApp</span></a>
+      <button class="burger" id="burgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<nav class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav-header">
+    <div class="logo-text" style="color:var(--verde-dark)">JOÃO <span style="color:var(--cobre)">BEAUTY</span></div>
+    <button class="mobile-nav-close" id="mobileNavClose"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+  </div>
+  <ul class="mobile-nav-list">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="produtos.html">Produtos</a></li>
+    <li><a href="sobre.html">Sobre</a></li>
+    <li><a href="contato.html">Contato</a></li>
+  </ul>
+  <div class="mobile-nav-footer">
+    <a href="https://wa.me/5562993403763" target="_blank" rel="noopener" class="btn btn-whatsapp" style="justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>Falar no WhatsApp</a>
+  </div>
+</nav>
+
+<main id="main-content">
+
+  <!-- HERO SOBRE -->
+  <section class="sobre-hero" aria-labelledby="sobre-title">
+    <div class="container" style="position:relative;z-index:1">
+      <span class="section-tag">Nossa História</span>
+      <h1 id="sobre-title">Mais do que produtos — <br>uma experiência de cuidado</h1>
+      <p>A João Beauty nasceu da paixão por skincare e pela crença de que todo mundo merece ter acesso a produtos de altíssima qualidade com orientação especializada.</p>
+    </div>
+  </section>
+
+  <!-- MISSÃO / VISÃO / VALORES CARDS -->
+  <section class="section" aria-labelledby="mvv-title">
+    <div class="container">
+      <div class="section-header centered" data-reveal>
+        <span class="section-tag">Quem Somos</span>
+        <h2 class="section-title" id="mvv-title">João Beauty em 3 pilares</h2>
+        <p class="section-subtitle">Tudo o que fazemos é guiado por esses princípios</p>
+      </div>
+      <div class="missao-grid">
+        <div class="missao-card" data-reveal data-reveal-delay="1">
+          <div class="missao-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 8v4l3 3"></path>
+            </svg>
+          </div>
+          <p class="missao-title">Nossa Missão</p>
+          <p class="missao-desc">Oferecer produtos originais Caudalie com atendimento personalizado e consultoria especializada, tornando o skincare premium acessível e descomplicado para todos.</p>
+        </div>
+        <div class="missao-card" data-reveal data-reveal-delay="2">
+          <div class="missao-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+          </div>
+          <p class="missao-title">Nossa Visão</p>
+          <p class="missao-desc">Ser referência em consultoria de skincare premium no Brasil, reconhecida pela confiança, expertise e pelo relacionamento próximo com cada cliente.</p>
+        </div>
+        <div class="missao-card" data-reveal data-reveal-delay="3">
+          <div class="missao-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+          </div>
+          <p class="missao-title">Nosso Propósito</p>
+          <p class="missao-desc">Transformar a rotina de cuidado pessoal em um ritual de prazer e bem-estar, conectando pessoas aos melhores produtos com orientação de quem realmente conhece.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NÚMEROS -->
+  <section class="numeros-section" aria-label="Nossos números">
+    <div class="container">
+      <div class="numeros-grid">
+        <div class="numero-item" data-reveal data-reveal-delay="1">
+          <p class="numero-val">12<span>+</span></p>
+          <p class="numero-label">Produtos Caudalie</p>
+        </div>
+        <div class="numero-item" data-reveal data-reveal-delay="2">
+          <p class="numero-val">4.8<span>★</span></p>
+          <p class="numero-label">Avaliação média</p>
+        </div>
+        <div class="numero-item" data-reveal data-reveal-delay="3">
+          <p class="numero-val">100<span>%</span></p>
+          <p class="numero-label">Produtos originais</p>
+        </div>
+        <div class="numero-item" data-reveal data-reveal-delay="4">
+          <p class="numero-val">24<span>h</span></p>
+          <p class="numero-label">Atendimento ágil</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE A CAUDALIE (marca) -->
+  <section class="caudalie-section" aria-labelledby="caudalie-title">
+    <div class="container">
+      <div class="caudalie-inner">
+        <div class="caudalie-visual" data-reveal>
+          <div class="caudalie-logo-placeholder">CAUDALIE</div>
+          <p>Fundada em 1995 no coração da Borgonha francesa, a Caudalie é pioneira em cosméticos à base de polifenóis da uva. Seus produtos combinam o melhor da ciência com ingredientes naturais e sustentáveis, conquistando consumidoras ao redor do mundo.</p>
+          <div class="disclaimer-box">
+            <strong>⚠️ Aviso importante:</strong>
+            João Beauty é uma loja <strong>independente</strong> especializada em produtos originais Caudalie. Este site não é o site oficial da marca. Para acessar o site oficial, visite <strong>caudalie.com</strong>.
+          </div>
+        </div>
+        <div class="sobre-text" data-reveal>
+          <span class="section-tag">Por que Caudalie?</span>
+          <h2 class="section-title" id="caudalie-title">A marca que escolhemos com orgulho</h2>
+          <p style="color:#666;font-weight:300;line-height:1.8;margin-bottom:20px">A Caudalie é reconhecida mundialmente pela qualidade excepcional de seus produtos, inovação científica e compromisso com a sustentabilidade. Cada produto é desenvolvido com ingredientes naturais rigorosamente selecionados.</p>
+          <p style="color:#666;font-weight:300;line-height:1.8;margin-bottom:32px">Especializamos na revenda desses produtos para que você tenha acesso a toda a linha Caudalie com o suporte de um consultor que conhece profundamente cada produto e sabe indicar o ideal para cada tipo de pele.</p>
+          <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:32px">
+            <div style="display:flex;gap:12px;align-items:center;font-size:.88rem;color:#555">
+              <span style="width:32px;height:32px;background:rgba(91,115,88,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--verde)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              Produtos 100% originais com garantia de autenticidade
+            </div>
+            <div style="display:flex;gap:12px;align-items:center;font-size:.88rem;color:#555">
+              <span style="width:32px;height:32px;background:rgba(91,115,88,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--verde)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              Consultoria especializada para escolher o produto certo
+            </div>
+            <div style="display:flex;gap:12px;align-items:center;font-size:.88rem;color:#555">
+              <span style="width:32px;height:32px;background:rgba(91,115,88,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--verde)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              Embalagem cuidadosa e entrega rápida para todo o Brasil
+            </div>
+            <div style="display:flex;gap:12px;align-items:center;font-size:.88rem;color:#555">
+              <span style="width:32px;height:32px;background:rgba(91,115,88,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--verde)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
+              Compra simples e segura pelo WhatsApp
+            </div>
+          </div>
+          <a href="produtos.html" class="btn btn-primary">Ver catálogo completo →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALORES -->
+  <section class="valores-section" aria-labelledby="valores-title">
+    <div class="container">
+      <div class="section-header centered" data-reveal>
+        <span class="section-tag">Nossos Diferenciais</span>
+        <h2 class="section-title" id="valores-title">O que nos torna especiais</h2>
+        <p class="section-subtitle">Cada detalhe do nosso atendimento é pensado para você</p>
+      </div>
+      <div class="valores-grid">
+        <div class="valor-card" data-reveal data-reveal-delay="1">
+          <div class="valor-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <div>
+            <p class="valor-title">Produto Original Garantido</p>
+            <p class="valor-desc">Trabalhamos exclusivamente com produtos Caudalie originais, adquiridos de fontes verificadas. Você pode comprar com total segurança e confiança.</p>
+          </div>
+        </div>
+        <div class="valor-card" data-reveal data-reveal-delay="2">
+          <div class="valor-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <div>
+            <p class="valor-title">Atendimento Humanizado</p>
+            <p class="valor-desc">Nada de bots ou respostas automáticas. Você fala diretamente com João, que conhece cada produto e vai te orientar com atenção e cuidado real.</p>
+          </div>
+        </div>
+        <div class="valor-card" data-reveal data-reveal-delay="3">
+          <div class="valor-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="1" y="3" width="15" height="13" rx="1"></rect>
+              <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle>
+              <circle cx="18.5" cy="18.5" r="2.5"></circle>
+            </svg>
+          </div>
+          <div>
+            <p class="valor-title">Entrega Rápida e Segura</p>
+            <p class="valor-desc">Seus produtos são embalados com cuidado e enviados rapidamente para todo o Brasil, com rastreamento e proteção para chegarem perfeitos até você.</p>
+          </div>
+        </div>
+        <div class="valor-card" data-reveal data-reveal-delay="4">
+          <div class="valor-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 8v4l3 3"></path>
+            </svg>
+          </div>
+          <div>
+            <p class="valor-title">Consultoria Especializada</p>
+            <p class="valor-desc">Antes de comprar, você recebe orientação personalizada sobre qual produto é ideal para seu tipo de pele, rotina e objetivos específicos.</p>
+          </div>
+        </div>
+        <div class="valor-card" data-reveal data-reveal-delay="1">
+          <div class="valor-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+          </div>
+          <div>
+            <p class="valor-title">Pós-venda Dedicado</p>
+            <p class="valor-desc">Nosso relacionamento não termina na compra. Acompanhamos sua experiência com os produtos e estamos disponíveis para tirar dúvidas a qualquer momento.</p>
+          </div>
+        </div>
+        <div class="valor-card" data-reveal data-reveal-delay="2">
+          <div class="valor-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <line x1="12" y1="1" x2="12" y2="23"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </div>
+          <div>
+            <p class="valor-title">Promoções Exclusivas</p>
+            <p class="valor-desc">Clientes da João Beauty têm acesso a condições especiais, combos exclusivos e promoções periódicas. Fale conosco para saber as ofertas disponíveis.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-section" aria-labelledby="cta-sobre-title">
+    <div class="container" style="position:relative;z-index:1;text-align:center">
+      <span class="section-tag">Vamos conversar?</span>
+      <h2 id="cta-sobre-title">Pronto para começar sua jornada Caudalie?</h2>
+      <p style="opacity:.85;margin-bottom:32px;font-size:1.05rem">Entre em contato e descubra os produtos ideais para você</p>
+      <div class="cta-actions">
+        <a href="https://wa.me/5562993403763?text=Olá%20João!%20Conheci%20a%20João%20Beauty%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20Caudalie." target="_blank" rel="noopener" class="btn btn-whatsapp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          Falar no WhatsApp
+        </a>
+        <a href="produtos.html" class="btn btn-ghost" style="border-color:rgba(255,255,255,.4);color:#fff">Ver produtos →</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-text" style="margin-bottom:12px">JOÃO <span style="color:var(--cobre)">BEAUTY</span></div>
+        <p>Consultoria especializada e revenda de produtos originais Caudalie.</p>
+        <a href="https://wa.me/5562993403763" target="_blank" rel="noopener" class="footer-wa-btn" style="margin-top:16px">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          +55 62 99340-3763
+        </a>
+      </div>
+      <div class="footer-col"><h5>Navegação</h5><ul><li><a href="index.html">Home</a></li><li><a href="produtos.html">Produtos</a></li><li><a href="sobre.html">Sobre</a></li><li><a href="contato.html">Contato</a></li></ul></div>
+      <div class="footer-col"><h5>Produtos</h5><ul><li><a href="produtos.html?cat=seruns">Séruns</a></li><li><a href="produtos.html?cat=hidratacao">Hidratação</a></li><li><a href="produtos.html?cat=fragrancias">Fragrâncias</a></li><li><a href="produtos.html?cat=corpo">Corpo</a></li></ul></div>
+      <div class="footer-col"><h5>Contato</h5><ul><li><a href="https://wa.me/5562993403763" target="_blank">WhatsApp</a></li><li><a href="contato.html">Fale Conosco</a></li></ul><p style="font-size:.78rem;color:rgba(255,255,255,.45);margin-top:16px;line-height:1.6">Seg–Sáb: 9h às 18h<br>+55 62 99340-3763</p></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 João Beauty. Todos os direitos reservados.</p></div>
+  </div>
+  <div class="footer-disclaimer"><div class="container">João Beauty é uma loja independente especializada em produtos originais Caudalie. Não somos o site oficial da marca. Caudalie® é marca registrada de Caudalie S.A.S.</div></div>
+</footer>
+
+<!-- OVERLAYS -->
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true">
+  <div class="search-box">
+    <div class="search-input-wrap">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:#ccc;flex-shrink:0"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input type="search" id="searchInput" class="search-input" placeholder="Buscar produtos Caudalie..." autocomplete="off">
+      <button onclick="closeSearch()" style="color:#ccc;padding:4px" aria-label="Fechar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="productModal" role="dialog" aria-modal="true"></div>
+<div class="cart-sidebar-overlay" id="cartOverlay"></div>
+<aside class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header"><h3>Meu Carrinho</h3><button class="icon-btn" id="closeCartBtn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button></div>
+  <div class="cart-items" id="cartBody"><div class="cart-empty"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color:#ddd"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg><p>Seu carrinho está vazio</p><button class="btn btn-outline" onclick="closeCartSidebar()">Explorar produtos</button></div></div>
+  <div id="cartFooter"></div>
+</aside>
+
+<a href="https://wa.me/5562993403763" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+  <span class="wa-tooltip">Falar no WhatsApp</span>
+</a>
+<div class="toast-container" aria-live="polite"></div>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/search.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

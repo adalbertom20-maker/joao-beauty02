@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://joaobeauty.com.br/sitemap.xml
